@@ -1,34 +1,33 @@
 taylor <- function(x, grau){
   fx <- cos(x)
-  fx0 <- cos(0)
-  formula <- 1 + (funcao(grau, fx0, x)) 
+  formula <- 1 + (funcao(grau,x)) 
   return (formula)
 }
 
-funcao <-function(grau, fx0, x){
+funcao <-function(grau, x){
   a = 0
 if(grau == 0){return(0)}
   
   if (grau > 0){
-    d <- derivar( grau, fx0, a)
+    d <- derivar( grau, a)
     p <- x^parametro
     f <- fibo(grau)
     grau <- grau- 1
-    return ((d/f)*p + funcao(grau,fx0, x))
+    return ((d/f)*p + funcao(grau,x))
   }
   
   return (0)
 }
 
-derivar <- function(grau, x, a){
-  if (grau >0){
-    a <- deriv(fx0)
+derivar <- function(grau,  a){
+  if (grau >=0){
+    a <- (cos(0))
     grau <- grau -1
-    return(deriv(derivar(grau, fx0, a)))
+    return(deriv(derivar(grau, a),"x"))
     
     }
   
-  return (0)
+  return (a)
   
 }
 fibo <- function(grau){
