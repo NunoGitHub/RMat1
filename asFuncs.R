@@ -1,4 +1,5 @@
 taylor <- function(x, grau){
+  x<-var("x")
   formula <- 1+ (funcao(grau,x)) 
   return (formula)
 }
@@ -41,3 +42,4 @@ fibo <- function(grau, b){
     return(b * fibo(grau-1,b))
   }
 }
+
