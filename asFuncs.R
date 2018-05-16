@@ -1,5 +1,5 @@
 taylor <- function(x, grau){
-  x<-var("x")
+  x<-Var('x')
   formula <- 1+ (funcao(grau,x)) 
   return (formula)
 }
