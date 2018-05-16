@@ -1,6 +1,5 @@
 taylor <- function(x, grau){
-  fx <- cos(x)
-  formula <- 1 + (funcao(grau,x)) 
+  formula <- 1+ (funcao(grau,x)) 
   return (formula)
 }
 
@@ -19,17 +18,20 @@ funcao <-function(grau, x){
 
 
 derivar <- function(grau){
-  if ((grau %% 2) ==0 ){
+  if ((grau %% 2) !=0 ){
   return( 0)
   }
-  else {
+  else {if(grau%%4==0){
     return( 1)
+  }
+    else{
+      return(-1)
+     }
     
   }
+  
 }
 
-
-  
 
 fibo <- function(grau, b){
   if( grau == 0)
