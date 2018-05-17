@@ -44,6 +44,7 @@ fibo <- function(grau, b){
 
 taylorImprimir <- function(grau){
   formula <- (Imprime2(grau))
+  grafico(formula)
   return (formula)
 }
 
@@ -89,7 +90,6 @@ derivar2 <- function(ca){
   
 }
 
-
 fibo2 <- function(ca, b){
   if( ca == 0)
     return (1)
@@ -98,3 +98,13 @@ fibo2 <- function(ca, b){
     return(b * fibo2(ca-1,b))
   }
 }
+
+#graficos
+
+grafico <- function(formula){
+  
+  plot((1:1)^2, type = "l",xlim = c(-100, 200), 
+       ylim = c(2500, 7500), main = 'P3(x)', col  = "chocolate", formula)
+  
+}
+
