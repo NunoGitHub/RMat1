@@ -99,12 +99,11 @@ fibo2 <- function(ca, b){
   }
 }
 
-#graficos
 
-grafico <- function(formula){
-  
-  plot((1:1)^2, type = "l",xlim = c(-100, 200), 
-       ylim = c(2500, 7500), main = 'P3(x)', col  = "chocolate", formula)
-  
+grafico<- function(grau, grau2){
+  plot(taylorImprimir(grau), type = "l", 300,xlim = c(-10, 10), 
+       ylim = c(-10, 10), main = "P4(x)/p(10)", col  = "chocolate", xlab = "x", ylab = "y")
+  par(new=TRUE)
+  plot(taylorImprimir(grau2), type = "l", 300,xlim = c(-10, 10), 
+       ylim = c(-10, 10), main = "P4(x)/p(10)", col  = "blue", xlab = "x", ylab = "y")
 }
-
