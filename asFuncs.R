@@ -19,14 +19,14 @@ funcao <-function(grau, x){
 
 derivar <- function(grau){
   if ((grau %% 2) !=0 ){
-  return( 0)
+    return( 0)
   }
   else {if(grau%%4==0){
     return( 1)
   }
     else{
       return(-1)
-     }
+    }
     
   }
   
@@ -42,9 +42,11 @@ fibo <- function(grau, b){
   }
 }
 
+
+
+
 taylorImprimir <- function(grau){
   formula <- (Imprime2(grau))
-  grafico(formula)
   return (formula)
 }
 
@@ -102,8 +104,11 @@ fibo2 <- function(ca, b){
 
 grafico<- function(grau, grau2){
   plot(taylorImprimir(grau), type = "l", 300,xlim = c(-10, 10), 
-       ylim = c(-10, 10), main = "P4(x)/p(10)", col  = "chocolate", xlab = "x", ylab = "y")
+       ylim = c(-10, 10), main = "P4(x) a red---p(10) a azul", col  = "red", xlab = "x", ylab = "y")
   par(new=TRUE)
   plot(taylorImprimir(grau2), type = "l", 300,xlim = c(-10, 10), 
-       ylim = c(-10, 10), main = "P4(x)/p(10)", col  = "blue", xlab = "x", ylab = "y")
+       ylim = c(-10, 10), main = "P4(x) a red---p(10) a azul", col  = "blue", xlab = "x", ylab = "y")
 }
+
+
+
