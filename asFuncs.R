@@ -43,8 +43,6 @@ fibo <- function(grau, b){
 }
 
 
-
-
 taylorImprimir <- function(grau){
   formula <- (Imprime2(grau))
   return (formula)
@@ -53,7 +51,7 @@ taylorImprimir <- function(grau){
 
 Imprime2 <- function(grau){
   a<-c(0, 0)
-  return (polynomial(c(taylorImprimir2(grau, a))))
+  return (polynom::polynomial(c(taylorImprimir2(grau, a))))
 }
 
 
@@ -73,10 +71,6 @@ taylorImprimir2 <- function (grau, a){
   return (a) 
 }
 
-
-
-
-
 derivar2 <- function(ca){
   if ((ca %% 2) !=0 ){
     return( 0)
@@ -89,7 +83,6 @@ derivar2 <- function(ca){
     }
     
   }
-  
 }
 
 fibo2 <- function(ca, b){
@@ -103,12 +96,18 @@ fibo2 <- function(ca, b){
 
 
 grafico<- function(grau, grau2){
+  x <- seq(-5*pi,length.out=100)
+  y <- cos(x)
+  
   plot(taylorImprimir(grau), type = "l", 300,xlim = c(-10, 10), 
-       ylim = c(-10, 10), main = "P4(x) a red---p(10) a azul", col  = "red", xlab = "x", ylab = "y")
+       ylim = c(-10, 10), main = "P4(x) a red---P10(x) a azul f(x)=cos(x)a preto ", col  = "red", xlab = "x", ylab = "y")
   par(new=TRUE)
   plot(taylorImprimir(grau2), type = "l", 300,xlim = c(-10, 10), 
-       ylim = c(-10, 10), main = "P4(x) a red---p(10) a azul", col  = "blue", xlab = "x", ylab = "y")
+      ylim = c(-10, 10), main = "P4(x) a red---P10(x) a azul f(x)=cos(x)a preto ", col  = "blue", xlab = "x", ylab = "y")
+  par(new=TRUE)
+  plot(x,y,type="l",col  = "black",main = "P4(x) a red---P10(x) a azul f(x)=cos(x)a preto ",xlim = c(-10, 10), 
+       ylim = c(-10, 10))
+   
+
 }
-
-
 
